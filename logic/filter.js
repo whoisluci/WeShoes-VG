@@ -1,95 +1,120 @@
 "use strict";
 
-function filter_shoes() {
-    let selected_shoes = SHOES;
+function filterShoes() {
+  let selectedShoes = SHOES;
 
-    if (any_filter_checked("kind")) {
-        selected_shoes = kind_filter(selected_shoes);
-    }
+  if (anyFilterChecked("kind")) {
+    selectedShoes = filterByKind(selectedShoes);
+    // amount_products(selectedShoes.length)
+  }
 
-    if (any_filter_checked("country")) {
-        selected_shoes = country_filter(selected_shoes);
-    }
+  if (anyFilterChecked("country")) {
+    selectedShoes = filterByCountry(selectedShoes);
 
-    if (any_filter_checked("price")) {
-        selected_shoes = price_filter(selected_shoes);
-    }
+  }
 
-    return selected_shoes;
+  if (anyFilterChecked("price")) {
+    selectedShoes = filterByPrice(selectedShoes);
+    // amount_products(selectedShoes.length)
+  }
+
+
+  // else {
+  //   amount_products("275")
+  // }
+
+  return selectedShoes;
 }
 
 
 
 
 
-function any_filter_checked (filter_kind) {
-    const checked_filters = document.querySelectorAll(`#${filter_kind}_filter > .checked`);   //Beroende på hur elementen ser ut får selektorn ändras för högre specificitet
-    return checked_filters.length > 0;
+function anyFilterChecked(filterKind) {
+  const checkedFilters = document.querySelectorAll(`#${filterKind}Filter > .${filterKind}Checkmarks > .checked`);   //Beroende på hur elementen ser ut får selektorn ändras för högre specificitet
+  return checkedFilters.length > 0;
 }
 
 
 
+function filterByKind(shoes) {
+  const checkedKindDoms = document.querySelectorAll("#kindFilter .checked .text");
 
+  const checkedKindNames = arrayMap(checkedKindDoms, function (dom) { return dom.textContent });
 
-
-function filter_by_kind(shoes) {
-  const checked_kind_doms = document.querySelectorAll("#kind_filters .checked .text");
-
-  const checked_kind_names = array_map(checked_kind_doms, function (dom) { return dom.textContent });
-
-  const checked_kind_objects = array_map(checked_kind_names, function (kind_name) {
-    return array_find(KINDS, function (kind) {
-      return kind.name === kind_name;
+  const checkedKindObjects = arrayMap(checkedKindNames, function (kindName) {
+    return arrayFind(KINDS, function (kind) {
+      return kind.name === kindName;
     });
   });
 
-  const checked_kind_ids = array_map(checked_kind_objects, function (kind_object) {
-    return kind_object.id;
+  const checkedKindIds = arrayMap(checkedKindObjects, function (kindObject) {
+    return kindObject.id;
   });
 
-  shoes = array_filter(shoes, function (programme) {
-    return checked_kind_ids.includes(programme.kindID);
+  shoes = arrayFilter(shoes, function (catalouge) {
+    return checkedKindIds.includes(catalouge.kind_id);
   });
 
   return shoes;
 }
 
 
-function filter_by_country(shoes) {
-  const checked_country_doms = document.querySelectorAll("#country_filters .checked .text");
 
-  const checked_country_names = array_map(checked_country_doms, function (dom) { return dom.textContent });
+function filterByCountry(shoes) {
+  const checkedCountryDoms = document.querySelectorAll("#countryFilter .checked .text");
 
-  const checked_country_objects = array_map(checked_country_names, function (country_name) {
-    return array_find(COUNTRIES, function (country) {
-      return country.name === country_name;
+  const checkedCountryNames = arrayMap(checkedCountryDoms, function (dom) { return dom.textContent });
+
+  const checkedCountryObjects = arrayMap(checkedCountryNames, function (countryName) {
+    return arrayFind(COUNTRIES, function (country) {
+      return country.name === countryName;
     });
   });
 
-  const checked_country_ids = array_map(checked_country_objects, function (country_object) {
-    return country_object.id;
+  const checkedCountryIds = arrayMap(checkedCountryObjects, function (countryObject) {
+    return countryObject.id;
   });
 
-  shoes = array_filter(shoes, function (programme) {
-    return checked_country_ids.includes(programme.countryID);
+  const shoesIds = [];
+  for (let countryId of checkedCountryIds) {
+    for (let shoes of SHOES) {
+      if (shoes.country_id === countryId) {
+        shoesIds.push(shoes.id);
+      }
+    }
+  }
+  shoes = arrayFilter(shoes, function (catalouge) {
+    return shoesIds.includes(catalouge.id);
   });
 
   return shoes;
 }
 
-function filter_by_price(shoes) {
 
-    const checked_price_doms = document.querySelectorAll("#price_filters .checked .text");
 
-    const checked_price_amount = array_map(checked_price_doms, function (dom) { return dom.textContent });
 
-    checked_price_amount = parseInt(checked_price_amount);
+function filterByPrice(shoes) {
 
-    let checked_price_objects = arrayFilter(SHOES, function (shoe) { 
-    return shoe.price <= checked_price_amount
-});
+  const checkedPriceDoms = document.querySelectorAll("#priceFilter .checked .text");
 
-  shoes = checked_price_objects;
+  const checkedPriceAmount = arrayMap(checkedPriceDoms, function (dom) { return dom.textContent });
+
+  let priceChecker;
+
+  if (checkedPriceAmount.includes("Under 300kr")) {
+    priceChecker = 300;
+
+  } else if (checkedPriceAmount.includes("Under 700kr")) {
+    priceChecker = 700;
+
+  } else if (checkedPriceAmount.includes("Under 1000kr")) {
+    priceChecker = 1000;
+  }
+
+  shoes = arrayFilter(shoes, function (shoe) {
+    return shoe.price <= priceChecker;
+  });
 
   return shoes;
 }

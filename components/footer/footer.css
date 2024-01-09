@@ -1,0 +1,74 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9A0A1B;
+}
+
+button {
+    color: #9A0A1B;
+    /* background-color: #bbb9b9; */
+    background-color: rgba(232, 232, 232, 0.98);
+
+    width: 20vw;
+    font-size: 20px;
+    transition: all 200ms;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #FFF;
+    background-color: #55000A;
+}
+
+.boxBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#infoBox {
+    height: 60vh;
+    width: 70vw;
+    /* background-color: #bbb9b9; */
+    background-color: rgba(232, 232, 232, 0.98);
+    border-radius: 5px;
+    color: #9A0A1B;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    font-family: "Inter_bold";
+}
+
+#imgContainer {
+    background-image: url(../../images/aboutus/aboutUs.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #9A0A1B;
+
+    height: 70%;
+    width: 77%;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+
+.exitButton {
+    width: 1vh;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+}

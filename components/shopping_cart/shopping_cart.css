@@ -1,0 +1,71 @@
+#shoppingCart > h1 {
+    font-family: "inter_bold";
+    font-size: 37px;
+    text-align: center;
+    margin: 10px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#line {
+    background-color: rgb(255, 255, 255);
+    height: 3px;
+    width: 100%;
+    margin: 0 8px;
+}
+
+#shoesInCart {
+    overflow-y: scroll;
+}
+
+#totalPriceBox {
+    display: flex;
+    margin: 10px 20px;
+}
+
+#totalPrice {
+    font-family: "inter_bold";
+    font-size: 30px;
+}
+
+#shoeImage > img {
+    height: 130px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#shoeInCart {
+    display: flex;
+    font-family: "inter_regular";
+    font-size: 25px;
+}
+
+#shoeInfo {
+    display: grid;
+    grid-template-columns: 3fr, 1fr;
+}
+
+#shoeName {
+    font-family: "inter_bold";
+    font-size: 25px;
+}
+
+#shoePrice {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#checkoutButton {
+    padding: 5px 15px;
+    margin: auto;
+    font-size: 25px;
+}
+
+#removeShoe {
+    background-image: url(../../images/icons/trashcan-icon.svg);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}

@@ -18,22 +18,15 @@ const structureContainers = renderStructure(body);
 
 //  OBS!!! inte den korrekta renderingen, måste korrigeras innan!!
 
-render_header(body);
-render_nav(body);
+renderHeader(body);
+renderNav(body);
 renderCountryFilter(left);
-renderKindFilter (left);
-renderPriceFilter (left);
-catalogue();
-render_catalogueObject();
-//renderPopUpFilter(parentElement);
+renderKindFilter(left);
+renderPriceFilter(left);
+//catalogue();
+//render_catalogueObject();
 
-
-
-
-// Här ska resten av render_funktionerna anropas (listan av komponenter finns ovan).
-
-//funktion för att få sidebar att funka (om vi behöver en sidebar)
-let sidebar_menu = document.querySelector("#menu");
-sidebar_menu.addEventListener("click", function () {
-    document.querySelector("#sidebar").classList.toggle("active")
-})
+renderCatalogueList(rightBottom, SHOES);
+let main = document.querySelector("main");
+renderPopUpElement(main);
+renderFooter(structureContainers.footer);

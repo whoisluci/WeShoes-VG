@@ -1,22 +1,29 @@
-#kind_filter {
+#kindFilter {
   background-color: #9A0A1B;
   border: black 1px solid;
+  font-family: "Inter_regular";
   border-radius: 5px;
   padding-bottom: 20px;
-  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
-.kind_container h3 {
+#kindFilter>h3 {
+  font-family: "Inter_bold";
+  margin: 20px;
+}
+
+.kindContainer h3 {
   font-size: 20px;
   font-family: "Inter";
 }
 
-.kinds_checkmarks {
+.kindCheckmarks {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2px;
+  margin-left: 15px;
 }
 
-.checkmark_box {
+.checkmarkBox {
   background-color: white;
 }

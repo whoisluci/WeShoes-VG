@@ -1,0 +1,13 @@
+.sortByContainer {
+   margin: 0 70%;
+   display: flex;
+}
+
+#sort_by {
+    background-color: white;
+    font-family: "inter_regular";
+}
+
+.sortByContainer > p {
+    font-size: 20px;
+}

@@ -1,0 +1,258 @@
+/* Footer styles */
+
+button {
+    background-color: #7a7a7a;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* color: #f7f7f7; */
+    color: #9A0A1B;
+
+    margin-left: 20px;
+    padding: 8px 23px;
+    font-size: 14px;
+    font-family: "Inter_bold";
+
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(232, 232, 232, 0.98);
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+
+    width: 700px;
+    height: 500px;
+    padding: 20px;
+    padding-top: 40px;
+
+    font-family: "inter_regular";
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+.popupContent {
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 0;
+}
+
+.popupBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+#closePopupBtn {
+    position: absolute;
+    top: 0;
+    left: 650px;
+    color: #9A0A1B;
+    z-index: 100;
+    cursor: pointer;
+}
+
+#popUpItems {
+    display: grid;
+    grid-template-columns: 200px;
+    grid-template-rows: 120px;
+    gap: 150px;
+}
+
+
+#kinds {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: baseline;
+    margin-top: 10px;
+}
+
+
+#kinds>h1 {
+    font-size: 26px;
+    font-family: "Inter_bold";
+    white-space: nowrap;
+    color: #9A0A1B;
+}
+
+
+#kinds>p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #9A0A1B;
+}
+
+
+#sizes{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+
+.sizeType {
+    background-color: #bbb9b9;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin: 3px;
+    font-size: 14px;
+    color: #9A0A1B;
+    cursor: pointer;
+}
+
+.sizeType:hover {
+    background-color: #9A0A1B;
+    color: #bbb9b9;
+}
+
+.sizeType.selected {
+    background-color: #55000A;
+    color: #bbb9b9;
+}
+
+/* .sizeType.outOfStock {
+    background-color: #bbb9b9;
+} */
+
+#reviewsText {
+    display: flex;
+    flex-direction: column;
+    background-color: #bbb9b9;
+    width: 320px;
+
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    /* height: 150px; */
+    height: 180px;
+    grid-column: 1;
+    overflow-y: scroll;
+
+    font-size: 10px;
+}
+
+.reviewDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(154, 10, 27, 0.85);
+
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+
+#revText {
+    margin-left: 15px;
+}
+
+
+#reviews {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 15px;
+    color: #9A0A1B;
+}
+
+
+#image {
+    display: grid;
+    background-color: #bbb9b9;
+    width: 200px;
+    padding: 100px;
+    height: 220px;
+    border-radius: 5px;
+    background-position: center;
+    background-size: contain;
+}
+
+
+#boxTopRight {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1;
+    height: 100px;
+    margin-top: 10px;
+}
+
+
+#boxTopLeft {
+    margin-left: 5px;
+}
+
+
+#price {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    align-items: center;
+}
+
+#reviews>p {
+    padding: 0px;
+    color: #9A0A1B;
+}
+
+#kinds>p {
+    padding: 0px;
+    color: #9A0A1B;
+}
+
+#reviewsText>p {
+    padding: 0;
+    font-size: 14px;
+    /* margin-left: 15px; */
+}
+
+#boxBottomRight {
+    height: 50px;
+    width: 100px;
+}
+
+#boxBottomRight>div {
+    font-size: 18px;
+}
+
+#price {
+    margin-top: 0;
+    margin-left: 90px;
+}
+
+#price>h3 {
+    color: #9A0A1B;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+#buy {
+    border-radius: 20px;
+}

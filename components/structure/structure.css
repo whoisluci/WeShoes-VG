@@ -10,23 +10,66 @@ nav {
 
 main {
     display: flex;
+    background-color: #55000A;
+    padding: 50px 0;
 }
 
 #left {
     width: 35%;
     margin: 15px;
+    margin-left: 25px;
+    margin-top: 40px;
 }
 
 #right {
     width: 65%;
+    margin-right: 30px;
+    margin-top: 25px;
 
     display: flex;
     flex-direction: column;
 }
 
-#rightBottom {
+#catalogueList {
+    margin-top: 18px;
+}
+
+#rightBottom>#catalogueList>ol {
     display: grid;
-    grid-template-columns: repeat(3, 150px);
-    grid-template-rows: repeat(3, 200px);
-    gap: 5vw 2vw;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2vw 1vw;
+    margin-left: 20px;
+
+}
+
+#rightBottom>#catalogueList>ol>div {
+    width: 300px;
+}
+
+#rightBottom>#catalogueList>ol>.catalogue>#shoeImg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+}
+
+#shoeBoxText {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+
+    font-family: "jaldi_regular";
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+#shoeBoxText>h1 {
+    font-family: "inter_bold";
+    margin-top: 8px;
+}
+
+.price {
+    font-size: 22px;
 }
